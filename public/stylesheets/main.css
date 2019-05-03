@@ -1,0 +1,128 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Monserat;
+    src: url(../fonts/Montserrat-Regular.ttf)
+}
+body {
+    padding: 0;
+    font-family: Monserat;
+}
+
+p {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #131516;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.player-card {
+    position: relative;
+    max-width: 500px;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 3px;
+    background-color: ghostwhite;
+    box-shadow: 0 1px 1px 0 rgba(71, 73, 72, 0.5);
+}
+
+.player-card.golden {
+    background: linear-gradient(to right, #BF953F, #D1B464, #FFFFAC)
+}
+
+.card-top {
+    margin-bottom: 15px;
+}
+
+.player-name {
+    margin-right: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.rank {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 38px;
+}
+
+.average-kd {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.badge-container {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    max-width: 300px;
+}
+
+.badge {
+    float: right;
+    clear: both;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    background-color: #f73535;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    box-shadow: 1px 1px 1px 0 #a08585;
+}
+
+.badge-undertitle {
+    font-size: 10px;
+}
+
+.enhance {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+    .main-container {
+        padding: 0 5px;
+    }
+
+    .player-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .rank {
+        top: 10px;
+        right: 10px;
+    }
+
+    .badge-container {
+        top: 70px;
+        right: 10px;
+    }
+}

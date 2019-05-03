@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PUBG GOLDEN 4</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div id="player-list">
+            <div class="player-card"
+                v-bind:class="{ golden: item.Rank < 5 }"
+                v-for="(item, index) in playerList">
+                <div v-cloak>
+                    <p class="card-top"><span class="player-name">{{ item.Name }}</span></p>
+                    <div class="rank">{{ item.Rank }}</div>
+
+                    <p>Solo FPP: {{ item.FPPStats.Solo }}<br/></p>
+                    <p>Duo FPP: {{ item.FPPStats.Duo }}<br/></p>
+                    <p>Squad FPP: {{ item.FPPStats.Squad }}<br/></p>
+
+                    <p>Average Assists: {{ item.FPPStats.AverageAssists }}</p>
+                    <p>Average Damage: {{ item.FPPStats.AverageDamageDealt }}</p>
+                    <p>Average Headshot Kills: {{ item.FPPStats.AverageHeadshotKills }}</p>
+                    <p>Average Revives: {{ item.FPPStats.AverageRevives }}</p>
+                    <p>Longest Kill: {{ item.FPPStats.LongestKill }}m</p>
+                    <p>Total Solo Games: {{ item.FPPStats.SoloGames }}</p>
+                    <p class="enhance">Total Team Games: {{ item.FPPStats.TotalGames }}</p>
+
+                    <p class="average-kd">Average FPP Team K/D: {{ item.FPPStats.AverageKD }}</p>
+
+                    <div class="badge-container">
+                        <div v-if="item.FPPStats.AverageAssists && item.FPPStats.AssistsChamp" class="badge">ICEMAN<br/><span class="badge-undertitle">(highest average assists - {{ item.FPPStats.AverageAssists }})<span></div>
+                        <div v-if="item.FPPStats.AverageDamageDealt && item.FPPStats.DamageDealtChamp" class="badge">DAMAGE BEAST<br/><span class="badge-undertitle">(highest average damage - {{ item.FPPStats.AverageDamageDealt }})<span></div>
+                        <div v-if="item.FPPStats.AverageHeadshotKills && item.FPPStats.HeadshotKillsChamp" class="badge">DR HEADSHOT<br/><span class="badge-undertitle">(highest average headshot kills - {{ item.FPPStats.AverageHeadshotKills }})<span></div>
+                        <div v-if="item.FPPStats.AverageRevives && item.FPPStats.RevivesChamp" class="badge">PARTY HEALER<br/><span class="badge-undertitle">(highest average revives - {{ item.FPPStats.AverageRevives }})<span></div>
+                        <div v-if="item.FPPStats.LongestKill && item.FPPStats.LongestKillChamp" class="badge">SNIPER WOLF<br/><span class="badge-undertitle">(longest kill in season - {{ item.FPPStats.LongestKill }}m)<span></div>
+                        <div v-if="item.FPPStats.SoloGames && item.FPPStats.MostSoloGamesChamp" class="badge">FOREVER ALONE<br/><span class="badge-undertitle">(most solo games - {{ item.FPPStats.SoloGames }} games)<span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- archive score for previous seasons -->
+        
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
